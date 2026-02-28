@@ -3,69 +3,105 @@
 #include <locale.h>
 #define E 0.001
 using namespace std;
+
+double task1(double a, double b);
+double task2(double x);
+double task4(double num);
+
 int main() {
-	double a, b;
-	setlocale(LC_CTYPE, "RUS");
-	cout << "¬‚Â‰ËÚÂ a(ÌÂ ÏÂÌÂÂ 4 ÁÌ‡˜‡˘Ëı ˆËÙ): ";
-	cin >> a;
-	cout << "¬‚Â‰ËÚÂ b(ÌÂ ÏÂÌÂÂ 4 ÁÌ‡˜‡˘Ëı ˆËÙ): ";
-	cin >> b;
-	double part1 = pow(sin(a + pow(b, 3)), 2);
-	double expanent = exp(pow(a, 2) - 9.4);
-	double denominator = pow(a + b, 3);
-	double part2 = sqrt(expanent / denominator);
-	double result = part1 * part2;
-	cout << "«Ì‡˜ÂÌËÂ ‚˚‡ÊÂÌËˇ ‰Îˇ a=" << a << " Ë b=" << b << " ‡‚ÌÓ " << result << endl;
-	//return 0;
-	cout << "============================================\n";
-	int choice;
-	double x;
-	
-	do {
-		cout << "\n===ÃÂÌ˛===\n";
-		cout << "1. ¬˚ÔÓÎÌËÚ¸ Á‡‰‡ÌËÂ\n";
-		cout << "2. ¬˚ÈÚË ËÁ Á‡‰‡ÌËˇ 2\n";
-		cout << "¬‡¯ ‚˚·Ó: " << endl;
-		cin >> choice;
-		switch (choice) {
-		case 1: {
-			double sum = 0.0;
-			double term = 1.0;
-			cout << "¬‚Â‰ËÚÂ ÁÌ‡˜ÂÌËÂ x: ";
-			cin >> x;
-			if (fabs(x) > 1) {
-				cout << "|x| ·ÓÎ¸¯Â 1";
-				break;
-			}
+    setlocale(LC_CTYPE, "RUS");
+    int Choice;
+    double a, b, x, num;
 
-			while (fabs(term) > E) {
+    do {
+        cout << "\n========== –ì–õ–ê–í–ù–û–ï –ú–ï–ù–Æ ==========\n";
+        cout << "1. –ó–∞–¥–∞–Ω–∏–µ 1 - –í—ã—á–∏—Å–ª–µ–Ω–∏–µ –≤—ã—Ä–∞–∂–µ–Ω–∏—è\n";
+        cout << "2. –ó–∞–¥–∞–Ω–∏–µ 2 - –°—É–º–º–∞ —Ä—è–¥–∞\n";
+        cout << "3. –ó–∞–¥–∞–Ω–∏–µ 4 - –ú–æ–¥—É–ª—å —á–∏—Å–ª–∞\n";
+        cout << "0. –í—ã—Ö–æ–¥\n";
+        cout << "–í–∞—à –≤—ã–±–æ—Ä: ";
+        cin >> Choice;
 
-				sum += term;
-				term *= -x;
+        switch (Choice) {
+        case 1: {
+            cout << "\n=== –ó–∞–¥–∞–Ω–∏–µ 1 ===\n";
+            cout << "–í–≤–µ–¥–∏—Ç–µ a (–Ω–µ –º–µ–Ω–µ–µ 4 –∑–Ω–∞—á–∞—â–∏—Ö —Ü–∏—Ñ—Ä): ";
+            cin >> a;
+            cout << "–í–≤–µ–¥–∏—Ç–µ b (–Ω–µ –º–µ–Ω–µ–µ 4 –∑–Ω–∞—á–∞—â–∏—Ö —Ü–∏—Ñ—Ä): ";
+            cin >> b;
+            double result_1 = task1(a, b);
+            cout << "–ó–Ω–∞—á–µ–Ω–∏–µ –≤—ã—Ä–∞–∂–µ–Ω–∏—è –¥–ª—è a = " << a << " –∏ b = " << b << " —Ä–∞–≤–Ω–æ " << result_1 << endl;
+            break;
+        }
 
-			}
-			cout << "–ÂÁÛÎ¸Ú‡Ú ‰Îˇ x=" << x << "==" << sum;
-			break;
-		}
-		case 2:
-			cout << "¬˚ıÓ‰ ËÁ Á‡‰‡ÌËˇ 2\n";
-			break;
+        case 2: {
+            cout << "\n=== –ó–∞–¥–∞–Ω–∏–µ 2 ===\n";
+            cout << "–í–≤–µ–¥–∏—Ç–µ –∑–Ω–∞—á–µ–Ω–∏–µ x: ";
+            cin >> x;
 
-		default:
-			cout << "ÕÂ‚ÂÌ˚È ‚˚·Ó\n";
-		}
+            if (fabs(x) > 1) {
+                cout << "–û—à–∏–±–∫–∞: |x| –¥–æ–ª–∂–Ω–æ –±—ã—Ç—å –º–µ–Ω—å—à–µ 1. –ü–æ–ø—Ä–æ–±—É–π—Ç–µ —Å–Ω–æ–≤–∞.\n";
+            }
+            else {
+                double result_2=task2(x);
+                cout << "–°—É–º–º–∞ —Ä—è–¥–∞ –¥–ª—è x = " << x << " —Ä–∞–≤–Ω–∞ " << result_2 << endl;
+            }
+            break;
+        }
 
-		
-	
-	//return 0;
-	cout << "\n==========================\n";
-	double num;
-	cout << "¬‚Â‰ËÚÂ ˜ËÒÎÓ: ";
-	cin >> num;
-	double module;
-	if (num < 0) module = num * (-1);
-	else module = num;
-	cout << "◊ËÒÎÓ " << num << " ‡‚ÌÓ" << module;
-	} while (choice != 2);
-	return 0;
+        case 3: {
+            cout << "\n=== –ó–∞–¥–∞–Ω–∏–µ 4 ===\n";
+            cout << "–í–≤–µ–¥–∏—Ç–µ —á–∏—Å–ª–æ: ";
+            cin >> num;
+            double result_4=task4(num);
+            cout << "–ú–æ–¥—É–ª—å —á–∏—Å–ª–∞ " << num << " —Ä–∞–≤–µ–Ω " << result_4 << endl;
+            break;
+        }
+
+        case 0:
+            cout << "–í—ã—Ö–æ–¥ –∏–∑ –ø—Ä–æ–≥—Ä–∞–º–º—ã.\n";
+            break;
+
+        default:
+            cout << "–ù–µ–≤–µ—Ä–Ω—ã–π –≤—ã–±–æ—Ä. –ü–æ–ø—Ä–æ–±—É–π—Ç–µ —Å–Ω–æ–≤–∞.\n";
+        }
+
+    } while (Choice != 0);
+
+    return 0;
+}
+
+// –§—É–Ω–∫—Ü–∏—è –¥–ª—è –ó–∞–¥–∞–Ω–∏—è 1
+double task1(double a, double b) {
+    double part1 = pow(sin(a + pow(b, 3)), 2);
+    double exponent = exp(pow(a, 2) - 9.4);
+    double denominator = pow(a + b, 3);
+    double part2 = sqrt(exponent / denominator);
+    double result = part1 * part2;
+    return result;
+    
+}
+
+// –§—É–Ω–∫—Ü–∏—è –¥–ª—è –ó–∞–¥–∞–Ω–∏—è 2
+double task2(double x) {
+    double sum = 0.0;
+    double term = 1.0;
+
+    while (fabs(term) > E) {
+        sum += term;
+        term *= -x;
+    }
+
+    return sum;
+}
+
+// –§—É–Ω–∫—Ü–∏—è –¥–ª—è –ó–∞–¥–∞–Ω–∏—è 4
+double task4(double num) {
+    double module;
+    if (num < 0)
+        module = num * (-1);
+    else
+        module = num;
+
+    return module;
 }
