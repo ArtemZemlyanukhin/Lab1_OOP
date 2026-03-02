@@ -30,7 +30,8 @@ int main() {
             cout << "Введите b (не менее 4 значащих цифр): ";
             cin >> b;
             double result_1 = task1(a, b);
-            cout << "Значение выражения для a = " << a << " и b = " << b << " равно " << result_1 << endl;
+            if (result_1 == -1000) cout << "Ошибка во время вычислений";
+            else cout << "Значение выражения для a = " << a << " и b = " << b << " равно " << result_1 << endl;
             break;
         }
 
@@ -78,7 +79,8 @@ double task1(double a, double b) {
     double denominator = pow(a + b, 3);
     double part2 = sqrt(exponent / denominator);
     double result = part1 * part2;
-    return result;
+    if (pow(a + b, 3) == 0) return -1000;
+    else return result;
     
 }
 
