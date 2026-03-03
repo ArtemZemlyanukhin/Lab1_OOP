@@ -1,21 +1,21 @@
-#include <iostream>
-#include <cmath>
-#include <locale.h>
-using namespace std;
-
-// Прототипы функций
-void task3_1();
-void task3_2();
-void task3_3();
-void task3_4();
-void task3_5();
-void task3_6();
-void task3_7();
-
-int main()
-{
-    setlocale(LC_CTYPE, "RUS");
-    int choice;
+    #include <iostream>
+    #include <cmath>
+    #include <locale.h>
+    using namespace std;
+    
+    // Прототипы функций
+    void task3_1();
+    void task3_2();
+    void task3_3();
+    void task3_4();
+    void task3_5();
+    void task3_6();
+    void task3_7();
+    
+    int main()
+    {
+        setlocale(LC_CTYPE, "RUS");
+        int choice;
 
     do {
         cout << "\n========== ЗАДАНИЕ 3 ==========\n";
@@ -45,15 +45,15 @@ int main()
     } while (choice != 0);
 
     return 0;
-}
-
-// ===== Задача 1: Делители числа =====
-void task3_1()
-{
-    int n;
-    cout << "\n>>> Задача 1: Делители числа\n";
-    cout << "Введите n: ";
-    cin >> n;
+    }
+    
+    // ===== Задача 1: Делители числа =====
+    void task3_1()
+    {
+        int n;
+        cout << "\n>>> Задача 1: Делители числа\n";
+        cout << "Введите n: ";
+        cin >> n;
 
     cout << "Делители: ";
     for (int j = 1; j <= n; j++)
@@ -64,12 +64,12 @@ void task3_1()
         }
     }
     cout << endl;
-}
-
-// ===== Задача 2: Максимум и минимум среди 100 чисел =====
-void task3_2()
-{
-    float a, a1, a2, min, max;
+    }
+    
+    // ===== Задача 2: Максимум и минимум среди 100 чисел =====
+    void task3_2()
+    {
+        float a, a1, a2, min, max;
 
     cout << "\n>>> Задача 2: Максимум и минимум среди 100 чисел\n";
 
@@ -99,13 +99,13 @@ void task3_2()
 
     float res = max - min;
     cout << "Разность: " << res << endl;
-}
-
-// ===== Задача 3: Двойной факториал =====
-void task3_3()
-{
-    int n;
-    double y = 1;
+    }
+    
+    // ===== Задача 3: Двойной факториал =====
+    void task3_3()
+    {
+        int n;
+        double y = 1;
 
     cout << "\n>>> Задача 3: Двойной факториал\n";
     cout << "Введите n: ";
@@ -127,14 +127,14 @@ void task3_3()
     }
 
     cout << "Результат: " << y << endl;
-}
-
-// ===== Задача 4: Двойная сумма (x+k)/m =====
-void task3_4()
-{
-    int n;
-    float x;
-    float s, rez = 0, rezs = 0;
+    }
+    
+    // ===== Задача 4: Двойная сумма (x+k)/m =====
+    void task3_4()
+    {
+        int n;
+        float x;
+        float s, rez = 0, rezs = 0;
 
     cout << "\n>>> Задача 4: Двойная сумма\n";
     cout << "Введите n и x: ";
@@ -152,13 +152,13 @@ void task3_4()
     rezs = rezs + rez;
 
     cout << "Результат: " << rezs << endl;
-}
-
-// ===== Задача 5: Двойная сумма 1/(i+2j) =====
-void task3_5()
-{
-    int n;
-    double s = 0;
+    }
+    
+    // ===== Задача 5: Двойная сумма 1/(i+2j) =====
+    void task3_5()
+    {
+        int n;
+        double s = 0;
 
     cout << "\n>>> Задача 5: Двойная сумма 1/(i+2j)\n";
     cout << "Введите n: ";
@@ -173,13 +173,13 @@ void task3_5()
     }
 
     cout << "Сумма: " << s << endl;
-}
-
-// ===== Задача 6: Сумма с факториалом =====
-void task3_6()
-{
-    double fac = 1;
-    double s = 0;
+    }
+    
+    // ===== Задача 6: Сумма с факториалом =====
+    void task3_6()
+    {
+        double fac = 1;
+        double s = 0;
 
     cout << "\n>>> Задача 6: Сумма с факториалом\n";
 
@@ -197,13 +197,13 @@ void task3_6()
     }
 
     cout << "Результат: " << s << endl;
-}
-
-// ===== Задача 7: Сумма утроенных нечетных =====
-void task3_7()
-{
-    int n, I, k, l;
-    float s;
+    }
+    
+    // ===== Задача 7: Сумма утроенных нечетных =====
+    void task3_7()
+    {
+        int n, I, k, l;
+        float s;
 
     cout << "\n>>> Задача 7: Сумма утроенных нечетных\n";
     cout << "Enter n: ";
